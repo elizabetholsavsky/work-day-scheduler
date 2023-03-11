@@ -4,9 +4,7 @@
 
 This webpage was created as part of a UT Full Stack Flex Coding Bootcamp challenge. I modified starter code to create a simple calendar application for scheduling your work day.
 
-add URL
-
-add screenshot
+![work-day-scheduler-screenshot](https://user-images.githubusercontent.com/116515976/224512888-cee93f27-6dfd-4508-9be3-a07f37c6821b.png)
 
 ## Usage
 
