@@ -2,16 +2,16 @@
 var today = dayjs().format('dddd, MMMM D, YYYY');
 $('#currentDay').text(today);
 
-$(function () {
+$(function() {
+  // save btn event listener
+  $('.saveBtn').on('click', function () {
+    var time = $(this).parent().attr('id');
+    var notes = $(this).siblings('.description').val();
 
-// save btn event listener
-$('.saveBtn').on('click', function() {
-  var time = $(this).parent().attr('id');
-  var notes = $(this).siblings('.description').val(); 
-  // save to local storage
-  localStorage.setItem(time, notes);
-  // console.log(localStorage); 
-})
+    // save to local storage
+    localStorage.setItem(time, notes);
+    // console.log(localStorage); 
+  })
 
   // get input saved in local storage
   $("#hour9 .description").val(localStorage.getItem("hour9"));
@@ -24,15 +24,30 @@ $('.saveBtn').on('click', function() {
   $("#hour16 .description").val(localStorage.getItem("hour16"));
   $("#hour17 .description").val(localStorage.getItem("hour17"));
 
+  // color-code blocks past, present, future
+  function colorCodeBlocks() {
+    var currentTime = dayjs().hour();
+
+    // get hour (integer) from string
+    $(".time-block").each(function () {
+      var plannerTime = parseInt($(this).attr("id").split("hour")[1]);
+
+      // set past, present, future colors
+      if (plannerTime < currentTime) {
+        $(this).removeClass("future");
+        $(this).removeClass("present");
+        $(this).addClass("past");
+      } else if (plannerTime === currentTime) {
+        $(this).removeClass('past');
+        $(this).removeClass('future');
+        $(this).addClass('present');
+      } else {
+        $(this).removeClass('present');
+        $(this).removeClass('past');
+        $(this).addClass('future');
+      }
+    })
+  }
+
+  colorCodeBlocks();
 });
-
-
-//   // TODO: Add code to apply the past, present, or future class to each time
-//   // block by comparing the id to the current hour. HINTS: How can the id
-//   // attribute of each time-block be used to conditionally add or remove the
-//   // past, present, and future classes? How can Day.js be used to get the
-//   // current hour in 24-hour time?
-//   //
-//   // TODO: Add code to get any user input that was saved in localStorage and set
-//   // the values of the corresponding textarea elements. HINT: How can the id
-//   // attribute of each time-block be used to do this?
