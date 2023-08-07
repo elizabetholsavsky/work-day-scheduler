@@ -25,9 +25,7 @@ Click on a time block to enter event details. Click the save button to save even
 
 ## Contributing
 
-Starter code (index.html and style.css) contributed by Georgeyoo, mfyke, and cmathena2u at link below:
-
-https://github.com/coding-boot-camp/crispy-octo-meme
+[Starter code](https://github.com/coding-boot-camp/crispy-octo-meme) (index.html and style.css) contributed by [Xandromus](https://github.com/Xandromus), [Georgeyoo](https://github.com/Georgeyoo), [mfyke](https://github.com/mfyke), and [courtthecoop](https://github.com/courtthecoop).
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
