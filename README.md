@@ -1,5 +1,9 @@
-# Work Day Scheduler
-https://elizabetholsavsky.github.io/work-day-scheduler/
+<div align="center">
+  
+  # Work Day Scheduler
+  https://elizabetholsavsky.github.io/work-day-scheduler/
+
+</div>
 
 ## Description
 
